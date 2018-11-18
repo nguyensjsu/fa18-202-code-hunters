@@ -6,10 +6,10 @@
   
 ### Members:
 
- Harsh Patel
- Pranali Bhavsar
- Aakash Thakkar
- Shridhar Shah  
+ Harsh Patel  
+ Pranali Bhavsar  
+ Aakash Thakkar  
+ Shridhar Shah   
   
   
 ### Game: Mario  
