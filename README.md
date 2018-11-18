@@ -7,11 +7,8 @@
 ### Members:
 
  Harsh Patel
- 
  Pranali Bhavsar
- 
  Aakash Thakkar
- 
  Shridhar Shah  
   
   
