@@ -14,5 +14,5 @@
   
 ### Game: Mario  
   
-### Intial Class Diagram
+### Initial Class Diagram
 ![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/Initial%20Class%20Diagram.png)
