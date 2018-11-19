@@ -4,7 +4,7 @@ Meeting 1 (11/13/2018)
 Explored games which we can implement for our project.I came up with racing game, where car races through track and it has to escape from getting hit by obstacles and managing car on  zigzag track. 
 
 2. What am I planning to work on next?  
-Before next scrum meeting I need to have understanding of how green-foot works, common classes, method and functionalities in green-foot. Work in green-foot and have my query discuss with teammates.I have to understand code of Mario.  
+Before next scrum meeting I need to have understanding of how green-foot works, common classes, method and functionalities in green-foot. Work in green-foot and have my query discuss with teammates.I have to understand code of Mario and explore new features and which design pattern can be implemented and why.  
 
 3. What tasks are blocked waiting on another team member?  
 Every member needs to do same task for initial week. All are working in parallel so no blocking on another member.
