@@ -11,7 +11,7 @@ Every member needs to do same task for initial week. All are working in parallel
 
 #### XP Values Report
 
-1. Respect 
+1. Respect: <br>
 Ensure respect within the members of the team.
 Allow the team members to give their opinion, without letting anyone isolated. Open and honest environment is ensured.
 Provide motivation inside the team to achieve complex tasks.
