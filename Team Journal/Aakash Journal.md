@@ -23,7 +23,7 @@ Every member in the team was true about what game they have searched before the 
 about each others research and came up with Mario game to be implemented for the project. 
 
 
-# Meeting 2 (11/13/2018)
+# Meeting 2 (11/20/2018)
 
 **1. What tasks did I work on / complete?**
 
