@@ -17,3 +17,24 @@ we can implement scrum in our work process.Each member in team came up with diff
 suggested game briefly. After discussion with teamamates we decided to implement Mario. It was a encouraging and peaceful discussion among group members. I made sure everybody interacted with each other 
 and put thier thoughts among teammates.
  
+Meeting 2 (11/20/2018)
+---
+1. What tasks did I work on / complete?  
+I studied on how green-foot work. Played a little with green-foot common classes and functionalities. Discussed problem I faced in green-foot with my teammates. They helped me clear my doubts. Understood code of Mario, how it is designed, how classes are execute and execution of functionalities in code. Thought of implementing factory pattern to put different enemy at runtime. Here score board will behave as observer.Track down changes need to make in order to implement design pattern. Prepared UML Class diagram for initial stage.  
+
+2. What am I planning to work on next?  
+I have to create different enemy for attacking mario. Need to implement factory pattern so, that differnet enemy can execute at run time.  
+
+3. What tasks are blocked waiting on another team member?  
+Every member needs to do same task for initial week. All are working in parallel so no blocking on another member.  
+
+
+#### XP Values Report
+
+1. Communication  
+Every teammate track downed what changes need to be changed and how to implement new features, which task should be completed first and what to take next was discussed. This made cmmunication easy between members. Members were enthusiastic and eager to start coding on game. Everybody has shown good communication and behavior till now.    
+
+
+
+
+ 
