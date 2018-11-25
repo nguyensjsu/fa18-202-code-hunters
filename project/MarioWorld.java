@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 /**
  * Write a description of class MarioWorld here.
  * 
@@ -18,6 +19,7 @@ public class MarioWorld extends World
      * Constructor for objects of class MarioWorld.
      * 
      */
+     EnemyFactory enemyFactory = new EnemyFactory();
     public MarioWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -32,7 +34,11 @@ public class MarioWorld extends World
         addObject(score, 10, 10);
         addObject(new Floor(), 120, 237);
         addObject(new Person(this, score), 98, 219);
-        addObject(new Enemy(score), 60, 60);
+        Enemy duck = enemyFactory.getEnemy("Duck");
+        Enemy monster = enemyFactory.getEnemy("Monster");
+        addObject(duck,60,60);
+        addObject(monster,50,50);
+        //addObject(new Enemy(score), 60, 60);
     }
 
     /**
@@ -41,10 +47,12 @@ public class MarioWorld extends World
     public void act()
     {
         int random = Greenfoot.getRandomNumber(300);
-
+        Enemy duck = enemyFactory.getEnemy("Duck");
+        Enemy monster = enemyFactory.getEnemy("Monster");
         if(random == 10)
         {
-            addObject(new Enemy(score), 60, 60);
+            addObject( duck, 60, 60);
+             addObject(monster,50,50);
         }
     }
 
