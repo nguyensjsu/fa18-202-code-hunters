@@ -1,36 +1,36 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-/**
- * Write a description of class MarioWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class MarioWorld extends World
-{
-
-    public Block blocks1[] = new Block[16];
-    public Block blocks2[] = new Block[4];
-    public Block blocks3[] = new Block[4];
-    public Block blocks4[] = new Block[12];
-    public Block blocks5[] = new Block[12];
-    public Score score = new Score();
+    import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+    
     /**
-     * Constructor for objects of class MarioWorld.
+     * Write a description of class MarioWorld2 here.
      * 
+     * @author (your name) 
+     * @version (a version number or a date)
      */
-    public MarioWorld()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(500, 1080/2, 1); 
+    public class MarioWorld2 extends World
+    {
+    
+        public Block blocks1[] = new Block[32];
+        public Block blocks2[] = new Block[4];
+        public Block blocks3[] = new Block[4];
+        public Block blocks4[] = new Block[12];
+        public Block blocks5[] = new Block[12];  
+        public Score score = new Score();
+        /**
+         * Constructor for objects of class MarioWorld.
+         * 
+         */
+        public MarioWorld2()
+        {    
+            // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+            super(500, 1080/2, 1); 
 
         GreenfootImage background = getBackground();
-        background.setColor(Color.BLACK);
-        background.fill();
+        
 
         createBlocks();
 
         addObject(score, 10, 10);
-        addObject(new Floor(),250, 524 );
+        addObject(new Floor(), 250, 524 );
         addObject(new Person(this, score), 98, 219);
         addObject(new Enemy(score), 60, 60);
     }
@@ -55,7 +55,7 @@ public class MarioWorld extends World
     {
         //16 blocks - Block set #1
         int x = 67;
-        for(int i = 0; i < 16; i++)
+        for(int i = 0; i < 32; i++)
         {
             blocks1[i] = new Block();
             addObject(blocks1[i], x, 140);
@@ -99,3 +99,4 @@ public class MarioWorld extends World
 
     }
 }
+
