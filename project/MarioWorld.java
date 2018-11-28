@@ -8,11 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MarioWorld extends World
 {
 
-    public Block blocks1[] = new Block[16];
-    public Block blocks2[] = new Block[4];
-    public Block blocks3[] = new Block[4];
-    public Block blocks4[] = new Block[12];
-    public Block blocks5[] = new Block[12];
+     public Block blocks1[] = new Block[32];
+            public Block blocks2[] = new Block[4];
+            public Block blocks3[] = new Block[15];
+            public Block blocks4[] = new Block[20];
+            public Block blocks5[] = new Block[12];  
+            public Block blocks6[] = new Block[18]; 
+            public Block blocks7[] = new Block[15];
     public Score score = new Score();
     /**
      * Constructor for objects of class MarioWorld.
@@ -53,48 +55,66 @@ public class MarioWorld extends World
      */
     public void createBlocks()
     {
-        //16 blocks - Block set #1
-        int x = 67;
-        for(int i = 0; i < 16; i++)
+         //32 blocks - Block set #1
+        int x = 100;
+        for(int i = 0; i < 32; i++)
         {
-            blocks1[i] = new Block();
-            addObject(blocks1[i], x, 140);
-            x+=7;
-        }
+           blocks1[i] = new Block();
+           addObject(blocks1[i], x, 330);
+           x+=7;
+            }
         //4 blocks - Block set #2
         int x2 = 3;
         for(int i = 0; i< 4; i++)
         {
             blocks2[i] = new Block();
-            addObject(blocks2[i], x2, 150);
+            addObject(blocks2[i], x2, 350);
             x2+=7;
         }
 
-        //4 blocks - Block set #3
-        int x3 = getWidth() - 25;
-        for(int i = 0; i < 4; i++)
+        //15 blocks - Block set #3
+        int x3 = getWidth() - 400;
+        for(int i = 0; i < 15; i++)
         {
             blocks3[i] = new Block();
-            addObject(blocks3[i], x3, 150);
+            addObject(blocks3[i], x3, 450);
             x3+=7;
         }
 
-        //12 blocks - Block set #4
-        int x4 = 3;
-        for(int i = 0; i < 12; i++)
+        //20 blocks - Block set #4
+        int x4 = 30;
+        for(int i = 0; i < 20; i++)
         {
             blocks4[i] = new Block();
-            addObject(blocks4[i], x4, 192);
+            addObject(blocks4[i], x4, 270);
             x4+=7;
         }
 
         //12 blocks - Block set #5
-        int x5 = getWidth() - 81;
+        int x5 = getWidth() - 200;
         for(int i = 0; i<12; i++)
         {
             blocks5[i] = new Block();
-            addObject(blocks5[i], x5, 192);
+            addObject(blocks5[i], x5, 380);
             x5+=7;
+        }
+        
+        //18 blocks - Block set #5
+        int x6 = getWidth() - 450;
+        for(int i = 0; i<18; i++)
+        {
+            blocks6[i] = new Block();
+            addObject(blocks6[i], x6, 400);
+            x6+=7;
+        }
+
+        //18 blocks - Block set #5
+        int x7 = getWidth() - 200;
+        for(int i = 0; i<18; i++)
+        {
+            blocks6[i] = new Block();
+            addObject(blocks6[i], x7, 430);
+            x7+=7;
         }
 
     }

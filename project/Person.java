@@ -16,7 +16,7 @@ public class Person  extends Actor
 
     //Force Values  
     private double gravityY = 0.1;  
-    private double jumpForce = 3;   //originally 3.5
+    private double jumpForce = 4;   //originally 3.5
 
     public World world;
     public Score score;
