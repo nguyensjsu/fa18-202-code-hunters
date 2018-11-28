@@ -29,7 +29,7 @@ Explored code of Mario and searched for the patterns that can be implemented in 
 I have decided to implement Memento pattern for maintaining lives of Mario. 
 
 3. What tasks are blocked waiting on another team member?  
-No tasks are blocked.  
+For implementing memento pattern, I need more than one levels and score details and Aakash will implement that in this week. So my next task is blocked on Akash.  
 
 #### XP Values Report
 
