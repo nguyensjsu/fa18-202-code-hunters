@@ -24,7 +24,7 @@ Meeting 2 (11/20/2018)
 I studied various features of the code, played with the original source code and started implementing various states on the game
 
 2. What am I planning to work on next?  
-I have already created a stop and start screen states for the game, now I will be implementing pause state.
+I have already created a stop and start screen states for the game, now I will be implementing pause screen. I will add alive and dead state to the game.
 
 3. What tasks are blocked waiting on another team member?  
 Every member needs to do same task for initial week. All are working in parallel so no blocking of another member.  
