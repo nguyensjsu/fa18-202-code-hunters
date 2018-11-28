@@ -36,7 +36,9 @@ public class Enemy extends Actor
      */
     public void act() 
     {
-        applyGravity();  
+        if(((MarioWorld) getWorld()).isRunning)
+    
+        {applyGravity();  
         teleport();
         hitSide();
         checkIfHit();
@@ -45,7 +47,7 @@ public class Enemy extends Actor
         {
             checkIfKicked(); 
         }
-
+    }
     }   
 
     /**

@@ -1,10 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-/**
- * Write a description of class MarioWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class MarioWorld extends World
 {
 
@@ -14,6 +9,8 @@ public class MarioWorld extends World
     public Block blocks4[] = new Block[12];
     public Block blocks5[] = new Block[12];
     public Score score = new Score();
+    public boolean isRunning=true;
+    PauseScreen pp=new PauseScreen();
     /**
      * Constructor for objects of class MarioWorld.
      * 
@@ -33,6 +30,8 @@ public class MarioWorld extends World
         addObject(new Floor(), 120, 237);
         addObject(new Person(this, score), 98, 219);
         addObject(new Enemy(score), 60, 60);
+        
+        
     }
 
     /**
@@ -41,11 +40,23 @@ public class MarioWorld extends World
     public void act()
     {
         int random = Greenfoot.getRandomNumber(300);
-
-        if(random == 10)
+        if(isRunning) 
+        {if(random == 10)
         {
             addObject(new Enemy(score), 60, 60);
         }
+    }
+          if(Greenfoot.mouseClicked(this))
+    {
+        if(isRunning)
+         {   isRunning = false;
+            addObject(pp,100,100);
+        }
+        else if(!isRunning)
+            {isRunning = true;
+            removeObject(pp);}
+    }  
+        
     }
 
     /**

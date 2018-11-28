@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */  
 public class Person  extends Actor  
 {  
+   iPersonState personAliveState, personDeadState, personState;
     //Basic Physics Variables  
     private double positionX = 130;  
     private double positionY = 100;  
@@ -32,6 +33,9 @@ public class Person  extends Actor
     {
         world = w;
         score = scr;
+        personAliveState = new PersonAliveState(this); // * state pattern 1*
+        personDeadState = new PersonDeadState(this); // * state pattern 1*
+        personState = personAliveState; // * state pattern 1*
     }
 
     
@@ -51,6 +55,9 @@ public class Person  extends Actor
     public void act()   
     {  
         //Apply Forces to change acceleration to move the person  
+       if(((MarioWorld) getWorld()).isRunning)
+    
+        {
         applyGravity();  
         applyJumpForce();  
 
@@ -63,7 +70,7 @@ public class Person  extends Actor
         checkIfDead();
 
         move();
-    }   
+    }  } 
 
     /**
      * move - moves the actor based on physics varibles
@@ -88,6 +95,7 @@ public class Person  extends Actor
         Actor turtle = getOneIntersectingObject(Enemy.class);
         if(turtle != null)
         {
+            personState.setState();
             getWorld().addObject(new GameOver(score), getWorld().getWidth() / 2,
             getWorld().getHeight() /  2);
             Greenfoot.stop();
@@ -272,5 +280,27 @@ public class Person  extends Actor
         {
             positionX = getWorld().getWidth() - 5;
         }
+
+    
     }
-}  
+//staet pattern    
+     public void display() {
+        personState.display();
+    }
+    void setState(iPersonState state) {
+        //System.out.println("received"+state);
+        this.personState = state;
+    }
+    iPersonState getPersonAliveState()
+    {
+        return personAliveState;
+    }    
+    iPersonState getPersonDeadState()
+    {
+        return personDeadState;
+    }
+    
+    
+    
+}
+  
