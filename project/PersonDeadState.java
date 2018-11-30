@@ -1,5 +1,5 @@
 /**
- * Write a description of class humanDead here.
+ * Write a description of class personDead here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
