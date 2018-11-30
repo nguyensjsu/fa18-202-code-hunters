@@ -26,6 +26,8 @@ public class Person  extends Actor
     private int timer = 0;
 
     private boolean hitBlock = false;
+    Originator originator;
+    CareTaker careTaker;
     /**
      * Person - constructs the person (mario) class
      */
@@ -33,6 +35,8 @@ public class Person  extends Actor
     {
         world = w;
         score = scr;
+        originator = new Originator();
+        careTaker = new CareTaker();
         personAliveState = new PersonAliveState(this); // * state pattern 1*
         personDeadState = new PersonDeadState(this); // * state pattern 1*
         personState = personAliveState; // * state pattern 1*
@@ -70,7 +74,7 @@ public class Person  extends Actor
 
         move();
        }}else{
-        if(((MarioWorld2)getWorld()).isRunning)
+        if(((MarioWorld2)getWorld()).isRunning){
         applyGravity();  
         applyJumpForce();  
 
@@ -84,6 +88,7 @@ public class Person  extends Actor
 
         move();
        }
+    }
     }
     /**
      * move - moves the actor based on physics varibles
@@ -108,10 +113,30 @@ public class Person  extends Actor
         Actor turtle = getOneIntersectingObject(Enemy.class);
         if(turtle != null)
         {
-            personState.setState();
-            getWorld().addObject(new GameOver(score), getWorld().getWidth() / 2,
-            getWorld().getHeight() /  2);
-            Greenfoot.stop();
+            originator.setState(getWorld());
+            careTaker.setMemento(originator.saveStateToMemento());
+            if(score.getLife() == 0){
+                personState.setState();
+                getWorld().addObject(new GameOver(score), getWorld().getWidth() / 2,
+                getWorld().getHeight() /  2);
+                Greenfoot.stop();
+            }else{
+                originator.getStateFromMemento(careTaker.getMemento());
+                if (getWorld() instanceof MarioWorld)
+                {
+                    score.decreaseLife();
+                    MarioWorld myWorld = (MarioWorld)originator.getState();
+                    myWorld.rebuildWorld();
+                }
+                if (getWorld() instanceof MarioWorld2)
+                {
+                    score.decreaseLife();
+                    MarioWorld2 worldTwo = (MarioWorld2)originator.getState();
+                    worldTwo.rebuildWorld();
+                }
+            }
+
+            
         }
     }
 

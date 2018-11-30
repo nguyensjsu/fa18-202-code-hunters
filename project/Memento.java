@@ -11,7 +11,7 @@ public class Memento {
    private World lastWorld;
 
    public Memento(World lastWorld){
-      lastWorld = lastWorld;
+      this.lastWorld = lastWorld;
    }
 
    public World getState(){

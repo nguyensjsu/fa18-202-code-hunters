@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 /**
  * Write a description of class MarioWorld here.
  *
@@ -32,17 +33,28 @@ public class MarioWorld extends World implements Observer
         background.setColor(Color.BLACK);
         background.fill();
         this.score.attach(new MarioWorld2(this.score));
-        createBlocks();
-
+       
         //concretesubject.setState(mw);
-        addObject(score, 10, 10);
-        addObject(new Floor(),250, 524 );
-        addObject(new Person(this, score), 98, 219);
-        addObject(new Enemy(score), 60, 60);
+        buildWorld();
 
 
     }
-
+    
+    public void rebuildWorld(){
+        List objects = getObjects(null);
+        removeObjects(objects);
+        buildWorld();
+    }
+    
+    private void buildWorld(){
+        createBlocks();
+        addObject(score, 25, 10);
+        
+        addObject(new Floor(),250, 524 );
+        addObject(new Person(this, score), 98, 219);
+        addObject(new Enemy(score), 60, 60);
+    }
+    
     /**
      * act - randomly spawns more enemies
      */
@@ -58,7 +70,7 @@ public class MarioWorld extends World implements Observer
           if(Greenfoot.mouseClicked(this))
     {
         if(isRunning)
-         {   isRunning = false;
+        {   isRunning = false;
             addObject(pp,100,100);
         }
         else if(!isRunning)

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-        
+import java.util.List;
 /**
          * Write a description of class MarioWorld2 here.
          * 
@@ -30,14 +30,24 @@ public class MarioWorld2 extends World implements Observer
         
         GreenfootImage background = getBackground();
         this.scoreObj = score;
+        buildWorld();
+        
+    }
+
+    public void rebuildWorld(){
+        List objects = getObjects(null);
+        removeObjects(objects);
+        buildWorld();
+    }
+    
+    private void buildWorld(){
         createBlocks();
-        System.out.println(scoreObj.score());
         addObject(scoreObj, 10, 10);
         addObject(new Floor(),250, 524 );
         addObject(new Person(this, scoreObj), 98, 219);
         addObject(new Enemy(scoreObj), 60, 60);
     }
-
+    
     /**
      * act - randomly spawns more enemies
      */
@@ -134,7 +144,7 @@ public class MarioWorld2 extends World implements Observer
     }
     
     public void update(){
-        if(scoreObj.score() == 50){
+        if(scoreObj.score() == 20){
             scoreObj.setState(2);
         
     }

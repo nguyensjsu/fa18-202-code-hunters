@@ -9,6 +9,7 @@ import java.util.*;
 public class Score extends Actor implements Subject
 {
     public int score = 0;
+    public int life = 1;
     private GreenfootImage image;
     MarioWorld2 mw  ;
     private List<Observer> listOfObservers;
@@ -18,9 +19,9 @@ public class Score extends Actor implements Subject
     public Score(int score)
     {
         this.score = score;
-        image = new GreenfootImage(100, 30);
+        image = new GreenfootImage(130, 30);
         image.setColor(Color.GREEN);
-        image.drawString("Score:  " + score, 5, 15);
+        image.drawString("Score:  " + Integer.toString(score) + "  Life:  " + Integer.toString(life), 40, 17);
         setImage(image);
         listOfObservers = new ArrayList<Observer>();
     }
@@ -48,6 +49,15 @@ public class Score extends Actor implements Subject
     public int score()
     {
         return score;
+    }
+    
+    public int getLife()
+    {
+        return life;
+    }
+    
+    public void decreaseLife(){
+        life--;
     }
 
     public World getState()
