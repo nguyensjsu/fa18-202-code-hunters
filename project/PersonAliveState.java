@@ -25,6 +25,6 @@ public class PersonAliveState implements iPersonState
     
     public void display()
     {
-     //   person.getWorld().addObject(new FinalBanner("youwin.png"), 500, 125);
+     
     }
 }
