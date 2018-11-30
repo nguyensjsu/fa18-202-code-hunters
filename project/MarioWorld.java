@@ -25,6 +25,7 @@ public class MarioWorld extends World implements Observer
      * Constructor for objects of class MarioWorld.
      *
      */
+     EnemyFactory enemyFactory;
     public MarioWorld()
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -34,41 +35,51 @@ public class MarioWorld extends World implements Observer
         background.setColor(Color.BLACK);
         background.fill();
         this.score.attach(new MarioWorld2(this.score));
-       
+
         //concretesubject.setState(mw);
         buildWorld();
 
-
     }
-    
+
     public void rebuildWorld(){
         List objects = getObjects(null);
         removeObjects(objects);
         buildWorld();
     }
-    
+
     private void buildWorld(){
         createBlocks();
+        enemyFactory = new EnemyFactory(score);
         addObject(score, 25, 10);
-        
+
         addObject(new Floor(),250, 524 );
         addObject(new Person(this, score), 50,500);
         addObject(new Enemy(score), 60, 60);
+        Enemy duck = enemyFactory.getEnemy("Duck");
+        Enemy monster = enemyFactory.getEnemy("Monster");
+        addObject(duck,60,60);
+        addObject(monster,50,50);
     }
-    
+
     /**
      * act - randomly spawns more enemies
      */
     public void act()
     {
         int random = Greenfoot.getRandomNumber(300);
+
         if(isRunning)
-        {if(random == 10)
         {
-            addObject(new Enemy(score), 60, 60);
+          if(random == 10)
+          Enemy duck = enemyFactory.getEnemy("Duck");
+          Enemy monster = enemyFactory.getEnemy("Monster");
+          if(random == 10)
+        {
+            addObject( duck, 60, 60);
+            addObject(monster,50,50);
         }
     }
-          if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this))
     {
         if(isRunning)
         {   isRunning = false;
@@ -88,7 +99,7 @@ public class MarioWorld extends World implements Observer
     {
          //32 blocks - Block set #1
         int x = 140;
-        
+
         for(int i = 0; i < 32; i++)
         {
            blocks1[i] = new Block();
@@ -148,7 +159,7 @@ public class MarioWorld extends World implements Observer
             addObject(blocks6[i], x7, 450);
             x7+=7;
         }
-        
+
         int x8 = 340;
         for(int i = 0; i < 20; i++)
         {
@@ -159,7 +170,7 @@ public class MarioWorld extends World implements Observer
 
 
     }
-    
+
     public void update(){
         if(score.score() < 10){
             score.setState(2);
