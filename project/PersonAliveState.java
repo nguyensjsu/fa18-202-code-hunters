@@ -1,3 +1,9 @@
+/**
+ * Write a description of class personAlive here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class PersonAliveState implements iPersonState  
 {
     public Person person;
