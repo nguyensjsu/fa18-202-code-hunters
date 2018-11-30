@@ -22,15 +22,15 @@ public class Monster extends Enemy
 
     private boolean knockedOver = false;
 
-    //private Score score;
+    private Score score;
     
     
-    /**public Duck(Score scr)
-    *{
-     *   score = scr;
-    }*/
+    public Monster(Score scr)
+    {
+        score = scr;
+    }
     
-    public Monster(){}
+//    public Monster(){}
 
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
@@ -58,7 +58,7 @@ public class Monster extends Enemy
         Actor mario = getOneIntersectingObject(Person.class);
         if(mario != null)
         {
-            //score.addScore();
+            score.addScore();
             getWorld().removeObject(this);
         }
     }

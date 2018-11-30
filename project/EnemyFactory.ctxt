@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=EnemyFactory
-comment1.params=
-comment1.target=void\ act()
-comment2.params=enemyType
-comment2.target=Enemy\ getEnemy(java.lang.String)
-numComments=3
+comment1.params=score
+comment1.target=EnemyFactory(Score)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=enemyType
+comment3.target=Enemy\ getEnemy(java.lang.String)
+numComments=4

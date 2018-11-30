@@ -19,7 +19,7 @@ public class MarioWorld extends World
      * Constructor for objects of class MarioWorld.
      * 
      */
-     EnemyFactory enemyFactory = new EnemyFactory();
+     EnemyFactory enemyFactory;
     public MarioWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,7 +30,7 @@ public class MarioWorld extends World
         background.fill();
 
         createBlocks();
-
+        enemyFactory = new EnemyFactory(score);
         addObject(score, 10, 10);
         addObject(new Floor(), 120, 237);
         addObject(new Person(this, score), 98, 219);
