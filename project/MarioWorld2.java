@@ -1,46 +1,39 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+        
 /**
- * Write a description of class MarioWorld here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class MarioWorld extends World implements Observer
+         * Write a description of class MarioWorld2 here.
+         * 
+         * @author (your name) 
+         * @version (a version number or a date)
+         */
+public class MarioWorld2 extends World implements Observer
 {
 
     public Block blocks1[] = new Block[32];
     public Block blocks2[] = new Block[4];
     public Block blocks3[] = new Block[15];
     public Block blocks4[] = new Block[20];
-    public Block blocks5[] = new Block[12];
+    public Block blocks5[] = new Block[12]; 
     public Block blocks6[] = new Block[18];
     public Block blocks7[] = new Block[15];
-    public boolean isRunning=true;
-    PauseScreen pp=new PauseScreen();
-    public Score score;
-
+    public Score scoreObj;
     /**
      * Constructor for objects of class MarioWorld.
-     *
+     * 
      */
-    public MarioWorld()
-    {
+    public MarioWorld2(Score score)
+    {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(500, 1080/2, 1);
-        this.score = new Score(0);
+        super(500, 1080/2, 1); 
+        
         GreenfootImage background = getBackground();
-        background.setColor(Color.BLACK);
-        background.fill();
-        this.score.attach(new MarioWorld2(this.score));
+        this.scoreObj = score;
         createBlocks();
-
-        //concretesubject.setState(mw);
-        addObject(score, 10, 10);
+        System.out.println(scoreObj.score());
+        addObject(scoreObj, 10, 10);
         addObject(new Floor(),250, 524 );
-        addObject(new Person(this, score), 98, 219);
-        addObject(new Enemy(score), 60, 60);
-
-
+        addObject(new Person(this, scoreObj), 98, 219);
+        addObject(new Enemy(scoreObj), 60, 60);
     }
 
     /**
@@ -49,23 +42,11 @@ public class MarioWorld extends World implements Observer
     public void act()
     {
         int random = Greenfoot.getRandomNumber(300);
-        if(isRunning)
-        {if(random == 10)
-        {
-            addObject(new Enemy(score), 60, 60);
-        }
-    }
-          if(Greenfoot.mouseClicked(this))
-    {
-        if(isRunning)
-         {   isRunning = false;
-            addObject(pp,100,100);
-        }
-        else if(!isRunning)
-            {isRunning = true;
-            removeObject(pp);}
-    }
 
+        if(random == 10)
+        {
+            addObject(new Enemy(scoreObj), 60, 60);
+        }
     }
 
     /**
@@ -116,7 +97,7 @@ public class MarioWorld extends World implements Observer
             addObject(blocks5[i], x5, 380);
             x5+=7;
         }
-
+        
         //18 blocks - Block set #5
         int x6 = getWidth() - 450;
         for(int i = 0; i<18; i++)
@@ -136,9 +117,11 @@ public class MarioWorld extends World implements Observer
         }
 
     }
+    
     public void update(){
-        if(score.score() < 10){
-            score.setState(2);
-        }
+        if(scoreObj.score() == 50){
+            scoreObj.setState(2);
+        
     }
+}
 }
