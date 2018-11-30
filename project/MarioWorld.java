@@ -13,9 +13,10 @@ public class MarioWorld extends World implements Observer
     public Block blocks2[] = new Block[4];
     public Block blocks3[] = new Block[15];
     public Block blocks4[] = new Block[20];
-    public Block blocks5[] = new Block[12];
+    public Block blocks5[] = new Block[16];
     public Block blocks6[] = new Block[18];
     public Block blocks7[] = new Block[15];
+    public Block blocks8[] = new Block[20];
     public boolean isRunning=true;
     PauseScreen pp=new PauseScreen();
     public Score score;
@@ -51,7 +52,7 @@ public class MarioWorld extends World implements Observer
         addObject(score, 25, 10);
         
         addObject(new Floor(),250, 524 );
-        addObject(new Person(this, score), 98, 219);
+        addObject(new Person(this, score), 50,500);
         addObject(new Enemy(score), 60, 60);
     }
     
@@ -86,13 +87,14 @@ public class MarioWorld extends World implements Observer
     public void createBlocks()
     {
          //32 blocks - Block set #1
-        int x = 100;
+        int x = 140;
+        
         for(int i = 0; i < 32; i++)
         {
            blocks1[i] = new Block();
            addObject(blocks1[i], x, 330);
            x+=7;
-            }
+        }
         //4 blocks - Block set #2
         int x2 = 3;
         for(int i = 0; i< 4; i++)
@@ -121,16 +123,16 @@ public class MarioWorld extends World implements Observer
         }
 
         //12 blocks - Block set #5
-        int x5 = getWidth() - 200;
-        for(int i = 0; i<12; i++)
+        int x5 = getWidth() - 180;
+        for(int i = 0; i<16; i++)
         {
             blocks5[i] = new Block();
-            addObject(blocks5[i], x5, 380);
+            addObject(blocks5[i], x5, 400);
             x5+=7;
         }
 
         //18 blocks - Block set #5
-        int x6 = getWidth() - 450;
+        int x6 = getWidth() - 480;
         for(int i = 0; i<18; i++)
         {
             blocks6[i] = new Block();
@@ -139,15 +141,25 @@ public class MarioWorld extends World implements Observer
         }
 
         //18 blocks - Block set #5
-        int x7 = getWidth() - 200;
+        int x7 = getWidth() - 100;
         for(int i = 0; i<18; i++)
         {
             blocks6[i] = new Block();
-            addObject(blocks6[i], x7, 430);
+            addObject(blocks6[i], x7, 450);
             x7+=7;
         }
+        
+        int x8 = 340;
+        for(int i = 0; i < 20; i++)
+        {
+            blocks8[i] = new Block();
+            addObject(blocks8[i], x8, 270);
+            x8+=7;
+        }
+
 
     }
+    
     public void update(){
         if(score.score() < 10){
             score.setState(2);
