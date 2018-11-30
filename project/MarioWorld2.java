@@ -16,27 +16,24 @@ public class MarioWorld2 extends World implements Observer
     public Block blocks5[] = new Block[12]; 
     public Block blocks6[] = new Block[18];
     public Block blocks7[] = new Block[15];
-    public Score score = new Score();
-    ConcreteSubject concretesubject = new ConcreteSubject();
+    public Score scoreObj;
     /**
      * Constructor for objects of class MarioWorld.
      * 
      */
-    public MarioWorld2()
+    public MarioWorld2(Score score)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 1080/2, 1); 
-
+        
         GreenfootImage background = getBackground();
-        background.setColor(Color.BLACK);
-        background.fill();
-
+        this.scoreObj = score;
         createBlocks();
-
-        addObject(score, 10, 10);
+        System.out.println(scoreObj.score());
+        addObject(scoreObj, 10, 10);
         addObject(new Floor(),250, 524 );
-        addObject(new Person(this, score), 98, 219);
-        addObject(new Enemy(score), 60, 60);
+        addObject(new Person(this, scoreObj), 98, 219);
+        addObject(new Enemy(scoreObj), 60, 60);
     }
 
     /**
@@ -48,7 +45,7 @@ public class MarioWorld2 extends World implements Observer
 
         if(random == 10)
         {
-            addObject(new Enemy(score), 60, 60);
+            addObject(new Enemy(scoreObj), 60, 60);
         }
     }
 
@@ -122,8 +119,8 @@ public class MarioWorld2 extends World implements Observer
     }
     
     public void update(){
-        if(score.score() > 50){
-            concretesubject.setState(this);
+        if(scoreObj.score() = 50){
+            scoreObj.setState(2);
         }
     }
 }

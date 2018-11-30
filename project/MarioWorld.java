@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MarioWorld extends World
+public class MarioWorld extends World implements Observer
 {
 
     public Block blocks1[] = new Block[32];
@@ -15,10 +15,7 @@ public class MarioWorld extends World
     public Block blocks5[] = new Block[12]; 
     public Block blocks6[] = new Block[18];
     public Block blocks7[] = new Block[15];
-    public Score score = new Score();
-    MarioWorld2 mw = new MarioWorld2();
-    ConcreteSubject concretesubject = new ConcreteSubject();
-    
+    public Score score; 
     /**
      * Constructor for objects of class MarioWorld.
      * 
@@ -27,13 +24,14 @@ public class MarioWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 1080/2, 1); 
-
+        this.score = new Score(0);
         GreenfootImage background = getBackground();
         background.setColor(Color.BLACK);
         background.fill();
-
+        this.score.attach(new MarioWorld2(this.score));
         createBlocks();
-        concretesubject.attach(mw);
+        
+        //concretesubject.setState(mw);
         addObject(score, 10, 10);
         addObject(new Floor(),250, 524 );
         addObject(new Person(this, score), 98, 219);
@@ -121,5 +119,9 @@ public class MarioWorld extends World
         }
 
     }
-    
+    public void update(){
+        if(score.score() < 10){
+            score.setState(2);
+        }
+    }
 }
