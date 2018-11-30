@@ -144,7 +144,7 @@ public class Monster extends Enemy
      */
     public void getKnockedOver()
     {
-        setImage("deadmonster.gif");
+        setImage("deadgoomba.png");
         accelerationY -=jumpForce;
         accelerationX = -velocityX;
         knockedOver = true;

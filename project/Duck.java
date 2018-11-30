@@ -159,6 +159,7 @@ public class Duck extends Enemy
         Actor coll = getOneObjectAtOffset(0, 8, Platform.class);
         if(coll != null)
         {
+            
             return true;
         }
         return false;
