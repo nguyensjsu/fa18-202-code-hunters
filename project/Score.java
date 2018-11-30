@@ -10,6 +10,7 @@ public class Score extends Actor
 {
     public int score = 0;
     private GreenfootImage image;
+    ConcreteSubject concretesubject = new ConcreteSubject();
     /**
      * Score - constructs the score class
      */
@@ -28,6 +29,10 @@ public class Score extends Actor
     {
         score+=10;
         setImage();
+        if(score > 50){
+        //    concreteSubject.setState
+        }
+        
     }
 
     /**

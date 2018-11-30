@@ -1,14 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class ScoreSubject here.
+ * Write a description of class ConcreteSubject here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ScoreSubject extends Actor
+public class ConcreteSubject extends Actor implements Subject
 {
-   private int score = 0 ;
    private List<Observer> listOfObservers;
     public void ScoreSubject() 
     {
@@ -16,14 +15,15 @@ public class ScoreSubject extends Actor
      
     }   
     
-    public int getState(){
-       return ((MyWorld) getWorld()).getState();
+    public World getState()
+    {
+        return getWorld();
     }
     
-    public void setState(int addScore){
-        ((MyWorld) getWorld()).addScore(addScore);
+    public void setState(World myworld){
+        myworld = getWorld();
         notifyObservers();
-    }
+    }   
     
     public void attach(Observer o){
         this.listOfObservers.add(o);

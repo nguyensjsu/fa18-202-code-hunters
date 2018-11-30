@@ -8,14 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MarioWorld extends World
 {
 
-     public Block blocks1[] = new Block[32];
-            public Block blocks2[] = new Block[4];
-            public Block blocks3[] = new Block[15];
-            public Block blocks4[] = new Block[20];
-            public Block blocks5[] = new Block[12];  
-            public Block blocks6[] = new Block[18]; 
-            public Block blocks7[] = new Block[15];
+    public Block blocks1[] = new Block[32];
+    public Block blocks2[] = new Block[4];
+    public Block blocks3[] = new Block[15];
+    public Block blocks4[] = new Block[20];
+    public Block blocks5[] = new Block[12]; 
+    public Block blocks6[] = new Block[18];
+    public Block blocks7[] = new Block[15];
     public Score score = new Score();
+    MarioWorld2 mw = new MarioWorld2();
+    ConcreteSubject concretesubject = new ConcreteSubject();
+    
     /**
      * Constructor for objects of class MarioWorld.
      * 
@@ -30,7 +33,7 @@ public class MarioWorld extends World
         background.fill();
 
         createBlocks();
-
+        concretesubject.attach(mw);
         addObject(score, 10, 10);
         addObject(new Floor(),250, 524 );
         addObject(new Person(this, score), 98, 219);
@@ -118,4 +121,5 @@ public class MarioWorld extends World
         }
 
     }
+    
 }

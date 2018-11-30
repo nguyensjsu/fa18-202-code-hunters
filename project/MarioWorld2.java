@@ -1,69 +1,71 @@
-        import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
         
-        /**
+/**
          * Write a description of class MarioWorld2 here.
          * 
          * @author (your name) 
          * @version (a version number or a date)
          */
-        public class MarioWorld2 extends World
+public class MarioWorld2 extends World implements Observer
+{
+
+    public Block blocks1[] = new Block[32];
+    public Block blocks2[] = new Block[4];
+    public Block blocks3[] = new Block[15];
+    public Block blocks4[] = new Block[20];
+    public Block blocks5[] = new Block[12]; 
+    public Block blocks6[] = new Block[18];
+    public Block blocks7[] = new Block[15];
+    public Score score = new Score();
+    ConcreteSubject concretesubject = new ConcreteSubject();
+    /**
+     * Constructor for objects of class MarioWorld.
+     * 
+     */
+    public MarioWorld2()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(500, 1080/2, 1); 
+
+        GreenfootImage background = getBackground();
+        background.setColor(Color.BLACK);
+        background.fill();
+
+        createBlocks();
+
+        addObject(score, 10, 10);
+        addObject(new Floor(),250, 524 );
+        addObject(new Person(this, score), 98, 219);
+        addObject(new Enemy(score), 60, 60);
+    }
+
+    /**
+     * act - randomly spawns more enemies
+     */
+    public void act()
+    {
+        int random = Greenfoot.getRandomNumber(300);
+
+        if(random == 10)
         {
-        
-            public Block blocks1[] = new Block[32];
-            public Block blocks2[] = new Block[4];
-            public Block blocks3[] = new Block[15];
-            public Block blocks4[] = new Block[20];
-            public Block blocks5[] = new Block[12];  
-            public Block blocks6[] = new Block[18]; 
-            public Block blocks7[] = new Block[15];
-            public Score score = new Score();
-            /**
-             * Constructor for objects of class MarioWorld.
-             * 
-             */
-            public MarioWorld2()
-            {    
-                // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-                super(500, 1080/2, 1); 
-    
-            GreenfootImage background = getBackground();
-            
-    
-            createBlocks();
-    
-            addObject(score, 10, 10);
-            addObject(new Floor(), 250, 524 );
-            addObject(new Person(this, score), 98, 219);
             addObject(new Enemy(score), 60, 60);
         }
-    
-        /**
-         * act - randomly spawns more enemies
-         */
-        public void act()
+    }
+
+    /**
+     * createBlocks - adds the blocks/platforms
+     */
+    public void createBlocks()
+    {
+         //32 blocks - Block set #1
+        int x = 100;
+        for(int i = 0; i < 32; i++)
         {
-            int random = Greenfoot.getRandomNumber(300);
-    
-            if(random == 10)
-            {
-                addObject(new Enemy(score), 60, 60);
+           blocks1[i] = new Block();
+           addObject(blocks1[i], x, 330);
+           x+=7;
             }
-        }
-    
-        /**
-         * createBlocks - adds the blocks/platforms
-         */
-        public void createBlocks()
-        {
-            //32 blocks - Block set #1
-            int x = 100;
-            for(int i = 0; i < 32; i++)
-            {
-                blocks1[i] = new Block();
-                addObject(blocks1[i], x, 330);
-                x+=7;
-            }
-            //4 blocks - Block set #2
+        //4 blocks - Block set #2
         int x2 = 3;
         for(int i = 0; i< 4; i++)
         {
@@ -118,5 +120,10 @@
         }
 
     }
+    
+    public void update(){
+        if(score.score() > 50){
+            concretesubject.setState(this);
+        }
+    }
 }
-
