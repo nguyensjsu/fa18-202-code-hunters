@@ -16,6 +16,8 @@ public class MarioWorld2 extends World implements Observer
     public Block blocks5[] = new Block[12]; 
     public Block blocks6[] = new Block[18];
     public Block blocks7[] = new Block[15];
+    public boolean isRunning=true;
+    PauseScreen pp=new PauseScreen();
     public Score scoreObj;
     /**
      * Constructor for objects of class MarioWorld.
@@ -43,9 +45,22 @@ public class MarioWorld2 extends World implements Observer
     {
         int random = Greenfoot.getRandomNumber(300);
 
-        if(random == 10)
+        if(isRunning)
+        {if(random == 10)
         {
             addObject(new Enemy(scoreObj), 60, 60);
+        }
+        }
+          if(Greenfoot.mouseClicked(this))
+        {
+            if(isRunning)
+             {   isRunning = false;
+                addObject(pp,100,100);
+            }
+            else if(!isRunning){
+                isRunning = true;
+                removeObject(pp);
+            }
         }
     }
 

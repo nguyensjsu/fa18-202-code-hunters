@@ -54,10 +54,23 @@ public class Person  extends Actor
      */  
     public void act()   
     {  
-        //Apply Forces to change acceleration to move the person  
-       if(((MarioWorld) getWorld()).isRunning)
-    
-        {
+        //Apply Forces to change acceleration to move the person
+       if(MarioWorld.class.isInstance(getWorld())){
+       if(((MarioWorld)getWorld()).isRunning)
+       {
+        applyGravity();  
+        applyJumpForce();  
+        //move left or right
+        runTimer();
+        moveRightAndLeft();
+        teleport();
+        hitTop();
+        hitSide();
+        checkIfDead();
+
+        move();
+       }}else{
+        if(((MarioWorld2)getWorld()).isRunning)
         applyGravity();  
         applyJumpForce();  
 
@@ -70,8 +83,8 @@ public class Person  extends Actor
         checkIfDead();
 
         move();
-    }  } 
-
+       }
+    }
     /**
      * move - moves the actor based on physics varibles
      */
