@@ -35,6 +35,24 @@ Every member needs to do same task for initial week. All are working in parallel
 1. Respect:<br> 
 Ensure respect within the members of the team. Allow the team members to give their opinion, without letting anyone isolated. Open and honest environment is ensured. Provide motivation inside the team to achieve complex tasks. Understanding of the user perspective.    
 
+Meeting 3 (11/27/2018)
+---
+1. What tasks did I work on / complete?  
+I implemented state pattern to have states like Alive and Dead of Mario. I created the Home screen, Pause Screen along with the stop screen.
+
+2. What am I planning to work on next?  
+I have already completed the implementation of Alive and Dead state, now I will be creating sequence diagram, along with the class diagram of my pattern along with the Ad video. We will be merging the patterns of different group member.
+
+3. What tasks are blocked waiting on another team member?  
+Every member needs to do same task for the final week. All are working in parallel so no blocking of another member.  
+
+
+#### XP Values Report
+
+1. Respect:<br> 
+Ensure respect within the members of the team. Allow the team members to give their opinion, without letting anyone isolated. Open and honest environment is ensured. Provide motivation inside the team to achieve complex tasks. Understanding of the user perspective.    
+
+
 
 
 
