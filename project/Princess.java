@@ -24,7 +24,7 @@ public class Princess extends Actor
     private void checkIfWin(){
         Actor person = getOneIntersectingObject(Person.class);
         if(person != null){
-            Greenfoot.setWorld(new StartMenu1());
+            Greenfoot.setWorld(new WinWorld());
         }
     }
 }
