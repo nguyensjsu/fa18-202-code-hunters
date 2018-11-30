@@ -119,8 +119,9 @@ public class MarioWorld2 extends World implements Observer
     }
     
     public void update(){
-        if(scoreObj.score() = 50){
+        if(scoreObj.score() == 50){
             scoreObj.setState(2);
-        }
+        
     }
+}
 }
