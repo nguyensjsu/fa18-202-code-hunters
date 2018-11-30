@@ -85,7 +85,7 @@ public class Person  extends Actor
         hitTop();
         hitSide();
         checkIfDead();
-
+        
         move();
        }
     }
@@ -105,6 +105,8 @@ public class Person  extends Actor
         setLocation((int)positionX,(int)positionY);
     }
 
+    
+    
     /**
      * checkIfDead - checks whether the person has collided with a turtle that hasn't been knocked over
      */
@@ -326,7 +328,7 @@ public class Person  extends Actor
         personState.display();
     }
     void setState(iPersonState state) {
-        //System.out.println("received"+state);
+        System.out.println("received"+state);
         this.personState = state;
     }
     iPersonState getPersonAliveState()
