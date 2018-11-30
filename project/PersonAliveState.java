@@ -1,3 +1,9 @@
+/**
+ * Write a description of class personAlive here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class PersonAliveState implements iPersonState  
 {
     public Person person;
@@ -25,6 +31,6 @@ public class PersonAliveState implements iPersonState
     
     public void display()
     {
-     //   person.getWorld().addObject(new FinalBanner("youwin.png"), 500, 125);
+     
     }
 }
