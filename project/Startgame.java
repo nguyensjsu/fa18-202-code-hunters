@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Start_game here.
+ * Write a description of class Startgame here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Start_game extends World
+public class Startgame extends World
 {
 
     /**
-     * Constructor for objects of class Start_game.
+     * Constructor for objects of class Startgame.
      * 
      */
-    public Start_game()
+    public Startgame()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
        super(240, 491/2, 1);
