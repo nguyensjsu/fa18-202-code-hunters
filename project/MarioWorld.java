@@ -42,6 +42,7 @@ public class MarioWorld extends World implements Observer
     }
 
     public void rebuildWorld(){
+        System.out.println("in world");
         List objects = getObjects(null);
         removeObjects(objects);
         buildWorld();
@@ -49,16 +50,12 @@ public class MarioWorld extends World implements Observer
 
     private void buildWorld(){
         createBlocks();
-        enemyFactory = new EnemyFactory(score);
         addObject(score, 25, 10);
 
         addObject(new Floor(),250, 524 );
         addObject(new Person(this, score), 50,500);
-        addObject(new Enemy(score), 60, 60);
-        Enemy duck = enemyFactory.getEnemy("Duck");
-        Enemy monster = enemyFactory.getEnemy("Monster");
-        addObject(duck,60,60);
-        addObject(monster,50,50);
+        addObject(new EnemyFactory(score).getEnemy("Duck"),60,60);
+        addObject(new EnemyFactory(score).getEnemy("Monster"),50,50);
     }
 
     /**
@@ -70,13 +67,11 @@ public class MarioWorld extends World implements Observer
 
         if(isRunning)
         {
-          if(random == 10)
-          Enemy duck = enemyFactory.getEnemy("Duck");
-          Enemy monster = enemyFactory.getEnemy("Monster");
+    
           if(random == 10)
         {
-            addObject( duck, 60, 60);
-            addObject(monster,50,50);
+            addObject( new EnemyFactory(score).getEnemy("Duck"), 60, 60);
+            addObject(new EnemyFactory(score).getEnemy("Monster"),50,50);
         }
     }
         if(Greenfoot.mouseClicked(this))

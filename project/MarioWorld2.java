@@ -23,6 +23,7 @@ public class MarioWorld2 extends World implements Observer
     public boolean isRunning=true;
     PauseScreen pp=new PauseScreen();
     public Score scoreObj;
+    EnemyFactory enemyFactory;
     /**
      * Constructor for objects of class MarioWorld.
      * 
@@ -33,6 +34,7 @@ public class MarioWorld2 extends World implements Observer
         super(500, 1080/2, 1); 
         
         GreenfootImage background = getBackground();
+        enemyFactory = new EnemyFactory(score);
         this.scoreObj = score;
         buildWorld();
         
@@ -50,7 +52,8 @@ public class MarioWorld2 extends World implements Observer
         addObject(new Floor(),250, 524 );
         addObject(new Person(this, scoreObj), 50,500);
         addObject(new Princess(this), 30,68);
-        addObject(new Enemy(scoreObj), 60, 60);
+        addObject(enemyFactory.getEnemy("Duck"),60,60);
+        addObject(enemyFactory.getEnemy("Monster"),50,50);
     }
     
     /**
@@ -63,7 +66,8 @@ public class MarioWorld2 extends World implements Observer
         if(isRunning)
         {if(random == 10)
         {
-            addObject(new Enemy(scoreObj), 60, 60);
+            addObject(enemyFactory.getEnemy("Duck"),60,60);
+            addObject(enemyFactory.getEnemy("Monster"),50,50);
         }
         }
           if(Greenfoot.mouseClicked(this))

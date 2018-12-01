@@ -112,9 +112,11 @@ public class Person  extends Actor
      */
     private void checkIfDead()
     {
-        Actor turtle = getOneIntersectingObject(Enemy.class);
-        if(turtle != null)
+        Actor turtle = getOneIntersectingObject(Duck.class);
+        Actor monster = getOneIntersectingObject(Monster.class);
+        if(turtle != null || monster != null)
         {
+            
             originator.setState(getWorld());
             careTaker.setMemento(originator.saveStateToMemento());
             if(score.getLife() == 0){
@@ -122,7 +124,7 @@ public class Person  extends Actor
                 getWorld().addObject(new GameOver(score), getWorld().getWidth() / 2,
                 getWorld().getHeight() /  2);
                 Greenfoot.stop();
-            }else{
+            }else{                
                 originator.getStateFromMemento(careTaker.getMemento());
                 if (getWorld() instanceof MarioWorld)
                 {
