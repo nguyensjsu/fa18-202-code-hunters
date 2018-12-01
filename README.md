@@ -22,7 +22,7 @@
 ### Sprint Task Sheet
   
   
-[Click here](https://docs.google.com/spreadsheets/d/15iBaxiX_LH-3PQf87b1fwjAhW5N5MLzOiGR15KLyVBA/edit?ts=5c021a64#gid=418775657)  
+[Click here](https://docs.google.com/a/sjsu.edu/spreadsheets/d/e/2PACX-1vT3OzCVeynz5Eyqzb2kFZ8z_c65Gg305F03XAgA72QaYfocLm230H8qTQ3sgbmsiYFssr5Ng7EeEc3M/pubhtml)  
    
   
   
