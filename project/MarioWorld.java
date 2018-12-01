@@ -42,7 +42,7 @@ public class MarioWorld extends World implements Observer
     }
 
     public void rebuildWorld(){
-        System.out.println("in world");
+        //System.out.println("in world");
         List objects = getObjects(null);
         removeObjects(objects);
         buildWorld();
@@ -78,7 +78,7 @@ public class MarioWorld extends World implements Observer
     {
         if(isRunning)
         {   isRunning = false;
-            addObject(pp,100,100);
+            addObject(pp,250,230);
         }
         else if(!isRunning)
             {isRunning = true;

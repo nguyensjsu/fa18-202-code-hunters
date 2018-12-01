@@ -42,7 +42,7 @@ public class Score extends Actor implements Subject
     public void setImage()
     {
         image.clear();
-        image.drawString("Score:  " + score, 5, 15);
+        image.drawString("Score:  " + Integer.toString(score) + "  Life:  " + Integer.toString(life), 40, 17);
         setImage(image);
     }
 
@@ -58,6 +58,9 @@ public class Score extends Actor implements Subject
     
     public void decreaseLife(){
         life--;
+        image.clear();
+        image.drawString("Score:  " + Integer.toString(score) + "  Life:  " + Integer.toString(life), 40, 17);
+        setImage(image);
     }
 
     public World getState()
