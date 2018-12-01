@@ -330,7 +330,7 @@ public class Person  extends Actor
         personState.display();
     }
     void setState(iPersonState state) {
-        System.out.println("received"+state);
+        //System.out.println("received"+state);
         this.personState = state;
     }
     iPersonState getPersonAliveState()
