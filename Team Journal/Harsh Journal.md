@@ -37,7 +37,7 @@ For implementing memento pattern, I need more than one levels and score details 
 Every team member proposed one pattern that can be implemented. Everyone gave feedback to proposed patterns and after a long discussion we finalized patterns.  
   
   
-Meeting 2 (11/27/2018)
+Meeting 3 (11/27/2018)
 ---
 1. What tasks did I work on / complete?
 I implemented Memento pattern for the game so that mario gets lifeline. When monster hits mario, mario dies. So I gave one lifeline to mario, so that he can get one more chance from the same level and same score.  
