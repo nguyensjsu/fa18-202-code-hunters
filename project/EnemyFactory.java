@@ -28,6 +28,12 @@ public class EnemyFactory extends Actor
       else if(enemyType.equalsIgnoreCase("Monster")){
           return new Monster(this.score);
         }
+      else if(enemyType.equalsIgnoreCase("Wizard")){
+          return new Wizard(this.score);
+        }
+      else if(enemyType.equalsIgnoreCase("HammerBoy")){
+          return new HammerBoy(this.score);
+        }
          
          return null;
    }   

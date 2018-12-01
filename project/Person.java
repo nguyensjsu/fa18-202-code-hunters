@@ -114,7 +114,9 @@ public class Person  extends Actor
     {
         Actor turtle = getOneIntersectingObject(Duck.class);
         Actor monster = getOneIntersectingObject(Monster.class);
-        if(turtle != null || monster != null)
+        Actor wizard = getOneIntersectingObject(Wizard.class);
+        Actor hammerboy = getOneIntersectingObject(HammerBoy.class);
+        if(turtle != null || monster != null || wizard != null || hammerboy != null)
         {
             
             originator.setState(getWorld());

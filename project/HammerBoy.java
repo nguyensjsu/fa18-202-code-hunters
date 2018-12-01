@@ -1,25 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Enemy here.
+ * Write a description of class Plant here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Duck extends Enemy
+public class HammerBoy extends Enemy
 {
-
-    //Basic Physics Variables  
-    private double positionX = 130;  
-    private double positionY = 200;  
-    private double velocityX = .3;  
+    private double positionX = 360;  
+    private double positionY = 80;
+    private double speedX = .6;
+    private double velocityX = -speedX;  
     private double velocityY = 0;  
     private double accelerationX = 0;  
     private double accelerationY = 0;  
     
     
     //Force Values  
-    private double gravityY = 0.1;  
+    private double gravityY = 0.2;  
     private double jumpForce = 3;   //originally 3.5
 
     private boolean knockedOver = false;
@@ -27,12 +26,12 @@ public class Duck extends Enemy
     private Score score;
     
     
-    public Duck(Score scr)
+    public HammerBoy(Score scr)
     {
         score = scr;
     }
     
-    //public Duck(){}
+    
 
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
@@ -40,8 +39,7 @@ public class Duck extends Enemy
      */
     public void act() 
     {
-        if(MarioWorld.class.isInstance(getWorld())){
-            if(((MarioWorld) getWorld()).isRunning)
+       if(((MarioWorld2) getWorld()).isRunning)
             {applyGravity();  
             teleport();
             hitSide();
@@ -52,9 +50,9 @@ public class Duck extends Enemy
             {
                 checkIfKicked(); 
             }
-            }
-        }
-
+            } 
+            
+        
     }   
 
     /**
@@ -66,7 +64,7 @@ public class Duck extends Enemy
         if(mario != null)
         {
             score.addScore();
-            getWorld().removeObject(this);
+            ((MarioWorld2) getWorld()).removeObject(this);
         }
     }
 
@@ -126,7 +124,7 @@ public class Duck extends Enemy
      */
     private void hitSide()
     {
-        Actor coll = getOneObjectAtOffset(10, 0, Duck.class);
+        Actor coll = getOneObjectAtOffset(10, 0, HammerBoy.class);
         if(coll != null)
         {
             velocityX = -velocityX;
@@ -156,7 +154,7 @@ public class Duck extends Enemy
      */
     public void getKnockedOver()
     {
-        setImage("knockedOverEnemy.png");
+        setImage("hammerboydead.png");
         accelerationY -=jumpForce;
         accelerationX = -velocityX;
         knockedOver = true;
@@ -181,14 +179,13 @@ public class Duck extends Enemy
     public void teleport()
     {
         //if you go to the side of the world, you get put on the opposite side at the same level
-        if(positionX >= getWorld().getWidth()-5)
+        if(positionX >= ((MarioWorld2) getWorld()).getWidth()-5)
         {
             positionX = 6;
         }
         else if(positionX <= 5)
         {
-            positionX = getWorld().getWidth() - 5;
+            positionX = ((MarioWorld2) getWorld()).getWidth() - 5;
         }
-    }
-
+    }   
 }
