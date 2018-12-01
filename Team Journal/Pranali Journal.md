@@ -26,7 +26,7 @@ I studied on how green-foot work. Played a little with green-foot common classes
 I have to create different enemy for attacking mario. Need to implement factory pattern so, that differnet enemy can execute at run time.  
 
 3. What tasks are blocked waiting on another team member?  
-Every member needs to do same task for initial week. All are working in parallel so no blocking on another member.  
+I will be not be able to set exact postion for enemy untill Aakash makes enhances stage 1 block and will not be able to create enemy for 2nd stage untill it is created by Aakash.
 
 
 #### XP Values Report
@@ -34,7 +34,22 @@ Every member needs to do same task for initial week. All are working in parallel
 1. Communication  
 Every teammate track downed what changes need to be changed and how to implement new features, which task should be completed first and what to take next was discussed. This made cmmunication easy between members. Members were enthusiastic and eager to start coding on game. Everybody has shown good communication and behavior till now.    
 
+Meeting 3 (11/27/2018)  
+---  
 
+1. What tasks did I work on / complete?  
+I developed factory pattern for enemy attack. For stage one designed working of enemy and who to insert them in factory pattern.  
+
+2. What am I planning to work on next?  
+I need to implement enmey for next stages and set exact position of enemy according to blocks in stages. Have to prepare Use case diagram with sequence diagram.  
+
+3. What tasks are blocked waiting on another team member? 
+No activites are blocked.  
+
+
+#### XP Values Report  
+1. Communication
+With last sprint remaining everybody discussed how to work out remaining task. Communited how to integrate each other's work together. Discussed about error faced by them. Every team member expalined structure of there code to make integration easy. communication was clear and everybody understood each other's work and doubts of teamates where solved in very well way. 
 
 
  
