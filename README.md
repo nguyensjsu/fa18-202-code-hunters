@@ -23,4 +23,9 @@
 ### Activity Diagram
 ![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/Activity%20Diagram.png)
 
+### Use Case Diagram
+![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/UseCase%20Diagram.png)
+
+
+
 
