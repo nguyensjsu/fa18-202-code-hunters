@@ -24,7 +24,7 @@ public class MarioWorld2 extends World implements Observer
     PauseScreen pp=new PauseScreen();
     public Score scoreObj;
     EnemyFactory enemyFactory;
-    static GreenfootSound theme = new GreenfootSound("Menu theme.mp3");
+    static GreenfootSound theme = new GreenfootSound("Theme Song.mp3");
     /**
      * Constructor for objects of class MarioWorld.
      * 

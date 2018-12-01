@@ -42,7 +42,7 @@ public class Score extends Actor implements Subject
     public void setImage()
     {
         image.clear();
-        image.drawString("Score:  " + Integer.toString(score) + "  Life:  " + Integer.toString(life), 40, 17);
+        image.drawString("Score:  " + Integer.toString(score) + "  Life:  " + Integer.toString(life), 35, 17);
         setImage(image);
     }
 

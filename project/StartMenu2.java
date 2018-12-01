@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class StartMenu2 extends World
 {
     private int enterDelayCount; //Ticks up to determine when the player can press enter - to keep them from accidentally flipping through two worlds
-    static GreenfootSound theme = new GreenfootSound("Menu theme.mp3");
+    static GreenfootSound theme = new GreenfootSound("Theme Song.mp3");
     GreenfootSound clicked = new GreenfootSound("Clicked.wav");
     /**
      * Constructor for objects of class StartMenu2.
