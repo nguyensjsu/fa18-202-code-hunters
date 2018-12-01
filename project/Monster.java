@@ -9,9 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Monster extends Enemy
 {
     //Basic Physics Variables  
-    private double positionX = 80;  
-    private double positionY = 50;  
-    private double velocityX = .2;  
+    private double positionX =400;  
+    private double positionY = 180;
+    private double speedX = 0.5;
+    private double velocityX = - speedX;  
     private double velocityY = 0;  
     private double accelerationX = 0;  
     private double accelerationY = 0;  

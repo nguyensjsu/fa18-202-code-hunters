@@ -54,8 +54,8 @@ public class MarioWorld extends World implements Observer
 
         addObject(new Floor(),250, 524 );
         addObject(new Person(this, score), 50,500);
-        addObject(new EnemyFactory(score).getEnemy("Duck"),60,60);
-        addObject(new EnemyFactory(score).getEnemy("Monster"),50,50);
+        addObject(new EnemyFactory(score).getEnemy("Duck"),130,200);
+        addObject(new EnemyFactory(score).getEnemy("Monster"),400,180);
     }
 
     /**
@@ -68,10 +68,10 @@ public class MarioWorld extends World implements Observer
         if(isRunning)
         {
     
-          if(random == 10)
+          if(random==10 )
         {
-            addObject( new EnemyFactory(score).getEnemy("Duck"), 60, 60);
-            addObject(new EnemyFactory(score).getEnemy("Monster"),50,50);
+            addObject( new EnemyFactory(score).getEnemy("Duck"), 100, 180);
+            addObject(new EnemyFactory(score).getEnemy("Monster"),130,180);
         }
     }
         if(Greenfoot.mouseClicked(this))
