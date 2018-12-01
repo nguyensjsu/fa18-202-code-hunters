@@ -17,5 +17,5 @@
 ### Sprint Task Sheet
 
 [Click here](https://docs.google.com/spreadsheets/d/15iBaxiX_LH-3PQf87b1fwjAhW5N5MLzOiGR15KLyVBA/edit?ts=5c021a64#gid=418775657)
-### Initial Class Diagram
+### Final Class Diagram
 ![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/Final%20Class%20Diagram%20of%20Mario.png)
