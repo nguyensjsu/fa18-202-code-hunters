@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */  
 public class Person  extends Actor  
 {  
+   iPersonState personAliveState, personDeadState, personState;
     //Basic Physics Variables  
     private double positionX = 130;  
     private double positionY = 100;  
@@ -16,7 +17,7 @@ public class Person  extends Actor
 
     //Force Values  
     private double gravityY = 0.1;  
-    private double jumpForce = 3;   //originally 3.5
+    private double jumpForce = 4;   //originally 3.5
 
     public World world;
     public Score score;
@@ -25,6 +26,8 @@ public class Person  extends Actor
     private int timer = 0;
 
     private boolean hitBlock = false;
+    Originator originator;
+    CareTaker careTaker;
     /**
      * Person - constructs the person (mario) class
      */
@@ -32,6 +35,11 @@ public class Person  extends Actor
     {
         world = w;
         score = scr;
+        originator = new Originator();
+        careTaker = new CareTaker();
+        personAliveState = new PersonAliveState(this); // * state pattern 1*
+        personDeadState = new PersonDeadState(this); // * state pattern 1*
+        personState = personAliveState; // * state pattern 1*
     }
 
     
@@ -50,7 +58,23 @@ public class Person  extends Actor
      */  
     public void act()   
     {  
-        //Apply Forces to change acceleration to move the person  
+        //Apply Forces to change acceleration to move the person
+       if(MarioWorld.class.isInstance(getWorld())){
+       if(((MarioWorld)getWorld()).isRunning)
+       {
+        applyGravity();  
+        applyJumpForce();  
+        //move left or right
+        runTimer();
+        moveRightAndLeft();
+        teleport();
+        hitTop();
+        hitSide();
+        checkIfDead();
+
+        move();
+       }}else{
+        if(((MarioWorld2)getWorld()).isRunning){
         applyGravity();  
         applyJumpForce();  
 
@@ -61,10 +85,11 @@ public class Person  extends Actor
         hitTop();
         hitSide();
         checkIfDead();
-
+        
         move();
-    }   
-
+       }
+    }
+    }
     /**
      * move - moves the actor based on physics varibles
      */
@@ -80,17 +105,44 @@ public class Person  extends Actor
         setLocation((int)positionX,(int)positionY);
     }
 
+    
+    
     /**
      * checkIfDead - checks whether the person has collided with a turtle that hasn't been knocked over
      */
     private void checkIfDead()
     {
-        Actor turtle = getOneIntersectingObject(Enemy.class);
-        if(turtle != null)
+        Actor turtle = getOneIntersectingObject(Duck.class);
+        Actor monster = getOneIntersectingObject(Monster.class);
+        Actor wizard = getOneIntersectingObject(Wizard.class);
+        Actor hammerboy = getOneIntersectingObject(HammerBoy.class);
+        if(turtle != null || monster != null || wizard != null || hammerboy != null)
         {
-            getWorld().addObject(new GameOver(score), getWorld().getWidth() / 2,
-            getWorld().getHeight() /  2);
-            Greenfoot.stop();
+            
+            originator.setState(getWorld());
+            careTaker.setMemento(originator.saveStateToMemento());
+            if(score.getLife() == 0){
+                personState.setState();
+                getWorld().addObject(new GameOver(score), getWorld().getWidth() / 2,
+                getWorld().getHeight() /  2);
+                //Greenfoot.stop();
+            }else{                
+                originator.getStateFromMemento(careTaker.getMemento());
+                if (getWorld() instanceof MarioWorld)
+                {
+                    score.decreaseLife();
+                    MarioWorld myWorld = (MarioWorld)originator.getState();
+                    myWorld.rebuildWorld();
+                }
+                if (getWorld() instanceof MarioWorld2)
+                {
+                    score.decreaseLife();
+                    MarioWorld2 worldTwo = (MarioWorld2)originator.getState();
+                    worldTwo.rebuildWorld();
+                }
+            }
+
+            
         }
     }
 
@@ -272,5 +324,27 @@ public class Person  extends Actor
         {
             positionX = getWorld().getWidth() - 5;
         }
+
+    
     }
-}  
+//staet pattern    
+     public void display() {
+        personState.display();
+    }
+    void setState(iPersonState state) {
+        //System.out.println("received"+state);
+        this.personState = state;
+    }
+    iPersonState getPersonAliveState()
+    {
+        return personAliveState;
+    }    
+    iPersonState getPersonDeadState()
+    {
+        return personDeadState;
+    }
+    
+    
+    
+}
+  

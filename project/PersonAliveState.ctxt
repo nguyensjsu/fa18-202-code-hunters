@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=PersonAliveState
+comment1.params=person
+comment1.target=PersonAliveState(Person)
+comment2.params=
+comment2.target=boolean\ isAlive()
+comment3.params=
+comment3.target=boolean\ isDead()
+comment4.params=
+comment4.target=void\ setState()
+comment5.params=
+comment5.target=void\ display()
+numComments=6
