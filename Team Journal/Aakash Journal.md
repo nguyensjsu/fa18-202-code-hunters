@@ -43,3 +43,23 @@ As of now all the team members are implementing the patterns which they have dec
 - **Courage**
 
 Every member in the team discussed about the patterns that they searched for and accepted the drawbacks of their research from every members feedback.
+
+# Meeting 3 (11/27/2018)
+
+**1. What tasks did I work on / complete?**
+
+I implemented Observer pattern for the game in which score was subject and 2 mario worlds were the observer of the game.When mario hits the monster the score increased by 10 points and on scoring 50 points subject notifies the observer where another mario world comes into picture.
+
+**2. What am I planning to work on next?**
+
+I will be modifiying the blocks for the mario worlds in order to increase the difficulty level of the game.Along with this I will make one minute ad video for the game demo.
+
+**3. What tasks are blocked waiting on another team member?**
+
+As of now all the team members are implementing the patterns which they have decided. So, there are no blocked task waiting on another team member. 
+
+**XP values report :**
+
+- **Courage**
+
+Every member in the team discussed about how they implemented patterns in the game. Everyone gave their feedback without any bias and accepted the feedback and changes that they were suppose to do in the code from every members feedback.
