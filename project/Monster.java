@@ -38,16 +38,31 @@ public class Monster extends Enemy
      */
     public void act() 
     {
-        applyGravity();  
-        teleport();
-        hitSide();
-        checkIfHit();
-        move();
-        if(knockedOver)
-        {
-            checkIfKicked(); 
+        if(MarioWorld.class.isInstance(getWorld())){
+            if(((MarioWorld) getWorld()).isRunning)
+            {applyGravity();  
+            teleport();
+            hitSide();
+            checkIfHit();
+            move();
+            if(knockedOver)
+            {
+                checkIfKicked(); 
+            }
+            }
+        }else{
+            if(((MarioWorld2) getWorld()).isRunning){
+                applyGravity();  
+                teleport();
+                hitSide();
+                checkIfHit();
+                move();
+                if(knockedOver)
+                {
+                    checkIfKicked(); 
+                }
+            }
         }
-
     }   
 
     /**

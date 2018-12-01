@@ -39,14 +39,30 @@ public class Duck extends Enemy
      */
     public void act() 
     {
-        applyGravity();  
-        teleport();
-        hitSide();
-        checkIfHit();
-        move();
-        if(knockedOver)
-        {
-            checkIfKicked(); 
+        if(MarioWorld.class.isInstance(getWorld())){
+            if(((MarioWorld) getWorld()).isRunning)
+            {applyGravity();  
+            teleport();
+            hitSide();
+            checkIfHit();
+            move();
+            if(knockedOver)
+            {
+                checkIfKicked(); 
+            }
+            }
+        }else{
+            if(((MarioWorld2) getWorld()).isRunning){
+                applyGravity();  
+                teleport();
+                hitSide();
+                checkIfHit();
+                move();
+                if(knockedOver)
+                {
+                    checkIfKicked(); 
+                }
+            }
         }
 
     }   
@@ -78,17 +94,21 @@ public class Duck extends Enemy
      */
     public void move()
     {
+
+    
+        
         //Basic Physics  
-        if(!knockedOver)
-        {
-            velocityX += accelerationX;  
-            velocityY += accelerationY;  
-            positionX += velocityX;  
-            positionY += velocityY;  
-            accelerationX = 0;  
-            accelerationY = 0;  
-            setLocation((int)positionX,(int)positionY); 
-        }
+            if(!knockedOver)
+            {
+                velocityX += accelerationX;  
+                velocityY += accelerationY;  
+                positionX += velocityX;  
+                positionY += velocityY;  
+                accelerationX = 0;  
+                accelerationY = 0;  
+                setLocation((int)positionX,(int)positionY); 
+            }
+        
     }
 
     /** 
