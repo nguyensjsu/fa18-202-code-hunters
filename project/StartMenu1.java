@@ -20,7 +20,7 @@ public class StartMenu1 extends World
         super(500, 1080/2, 1);
         if(theme.isPlaying() == false)
         {
-            //theme.playLoop();
+            theme.playLoop();
         }
     }
     

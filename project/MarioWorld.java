@@ -26,6 +26,7 @@ public class MarioWorld extends World implements Observer
      *
      */
      EnemyFactory enemyFactory;
+     static GreenfootSound theme = new GreenfootSound("Menu theme.mp3");
     public MarioWorld()
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -35,7 +36,10 @@ public class MarioWorld extends World implements Observer
         background.setColor(Color.BLACK);
         background.fill();
         this.score.attach(new MarioWorld2(this.score));
-
+        if(theme.isPlaying() == false)
+        {
+            theme.playLoop();
+        }
         //concretesubject.setState(mw);
         buildWorld();
 

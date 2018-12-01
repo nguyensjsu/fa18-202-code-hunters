@@ -16,7 +16,7 @@ public class Monster extends Enemy
     private double velocityY = 0;  
     private double accelerationX = 0;  
     private double accelerationY = 0;  
-
+    GreenfootSound clicked = new GreenfootSound("Clicked.wav");
     //Force Values  
     private double gravityY = 0.1;  
     private double jumpForce = 2;   //originally 3.5
@@ -164,6 +164,7 @@ public class Monster extends Enemy
         accelerationY -=jumpForce;
         accelerationX = -velocityX;
         knockedOver = true;
+        clicked.play();
     }
 
     /**

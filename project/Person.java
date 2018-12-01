@@ -125,7 +125,7 @@ public class Person  extends Actor
                 personState.setState();
                 getWorld().addObject(new GameOver(score), getWorld().getWidth() / 2,
                 getWorld().getHeight() /  2);
-                Greenfoot.stop();
+                //Greenfoot.stop();
             }else{                
                 originator.getStateFromMemento(careTaker.getMemento());
                 if (getWorld() instanceof MarioWorld)

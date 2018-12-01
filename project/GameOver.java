@@ -20,4 +20,16 @@ public class GameOver extends Actor
         image.drawString("Score: " + score.score(), 10, 50);
         setImage(image);
     }
+    
+    /**
+     * Act - do whatever the Enemy wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        if(Greenfoot.isKeyDown("enter")){
+            Greenfoot.setWorld(new StartMenu1());
+        }
+    }
+    
 }

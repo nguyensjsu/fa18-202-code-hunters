@@ -24,6 +24,7 @@ public class MarioWorld2 extends World implements Observer
     PauseScreen pp=new PauseScreen();
     public Score scoreObj;
     EnemyFactory enemyFactory;
+    static GreenfootSound theme = new GreenfootSound("Menu theme.mp3");
     /**
      * Constructor for objects of class MarioWorld.
      * 
@@ -37,6 +38,10 @@ public class MarioWorld2 extends World implements Observer
         enemyFactory = new EnemyFactory(score);
         this.scoreObj = score;
         buildWorld();
+        if(theme.isPlaying() == false)
+        {
+            theme.playLoop();
+        }
         
     }
 
@@ -185,7 +190,7 @@ public class MarioWorld2 extends World implements Observer
     }
     
     public void update(){
-        if(scoreObj.score() == 20){
+        if(scoreObj.score() == 50){
             scoreObj.setState(2);
         
     }

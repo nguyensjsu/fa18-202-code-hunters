@@ -15,7 +15,7 @@ public class HammerBoy extends Enemy
     private double velocityY = 0;  
     private double accelerationX = 0;  
     private double accelerationY = 0;  
-    
+    GreenfootSound clicked = new GreenfootSound("Clicked.wav");    
     
     //Force Values  
     private double gravityY = 0.2;  
@@ -158,6 +158,7 @@ public class HammerBoy extends Enemy
         accelerationY -=jumpForce;
         accelerationX = -velocityX;
         knockedOver = true;
+        clicked.play();
     }
 
     /**
