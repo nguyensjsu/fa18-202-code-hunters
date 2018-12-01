@@ -14,18 +14,21 @@
   
 ### Game: Mario  
 
-### Sprint Task Sheet
+### Youtube Ad Video
 
-[Click here](https://docs.google.com/spreadsheets/d/15iBaxiX_LH-3PQf87b1fwjAhW5N5MLzOiGR15KLyVBA/edit?ts=5c021a64#gid=418775657)
+[Click here](https://www.youtube.com/watch?v=FRvGlFp3U94&feature=youtu.be)
+  
+  
+### Sprint Task Sheet
+  
+[Click here](https://docs.google.com/spreadsheets/d/15iBaxiX_LH-3PQf87b1fwjAhW5N5MLzOiGR15KLyVBA/edit?ts=5c021a64#gid=418775657)  
+  
 ### Final Class Diagram
 ![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/Final%20Class%20Diagram%20of%20Mario.png)
-
+  
 ### Activity Diagram
 ![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/Activity%20Diagram.png)
-
+  
 ### Use Case Diagram
-![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/UseCase%20Diagram.png)
-
-
-
-
+![alt text](https://github.com/nguyensjsu/fa18-202-code-hunters/blob/master/Diagrams/UseCase%20Diagram.png)  
+  
