@@ -111,7 +111,7 @@ public class MarioWorld extends World implements Observer
         }
 
         //15 blocks - Block set #3
-        int x3 = getWidth() - 400;
+        int x3 = getWidth() - 500;
         for(int i = 0; i < 15; i++)
         {
             blocks3[i] = new Block();
@@ -138,7 +138,7 @@ public class MarioWorld extends World implements Observer
         }
 
         //18 blocks - Block set #5
-        int x6 = getWidth() - 480;
+        int x6 = getWidth() - 420;
         for(int i = 0; i<18; i++)
         {
             blocks6[i] = new Block();
